@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>au.com.versent</groupId>
+	<artifactId>parent</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Parent</name>
+
+	<modules>
+		<module>sample</module>
+		<module>nextsample</module>
+	</modules>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>maven2-snapshot-repository</id>
+			<name>Maven2 Snapshot Repository</name>
+			<url>file:////tmp/mvn/snapshot</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+		<repository>
+			<id>maven2-release-repository</id>
+			<name>Maven2 release Repository</name>
+			<url>file:////tmp/mvn/release</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<url>/tmp/snapshotGIT</url>
+		<connection>scm:git:file://localhost/tmp/GITRepo/jgitflow</connection>
+		<developerConnection>scm:git:file://localhost/tmp/GITRepo/jgitflow</developerConnection>
+		<tag>parent-0.0.1</tag>
+	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>external.atlassian.jgitflow</groupId>
+				<artifactId>jgitflow-maven-plugin</artifactId>
+				<version>1.0-m5.1</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<pushFeatures>true</pushFeatures>
+					<pushReleases>true</pushReleases>
+					<pushHotfixes>true</pushHotfixes>
+					<releaseBranchVersionSuffix>RC</releaseBranchVersionSuffix>
+					<flowInitContext>
+						<masterBranchName>master</masterBranchName>
+						<developBranchName>development</developBranchName>
+						<featureBranchPrefix>feature-</featureBranchPrefix>
+						<releaseBranchPrefix>release-</releaseBranchPrefix>
+						<hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+					</flowInitContext>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

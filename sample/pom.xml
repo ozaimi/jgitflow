@@ -8,14 +8,14 @@
 	<parent>
 		<groupId>au.com.versent</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.4-SNAPSHOT</version>
+		<version>0.0.4-RC-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>au.com.versent</groupId>
 			<artifactId>nextsample</artifactId>
-			<version>0.0.4-SNAPSHOT</version>
+			<version>0.0.4-RC-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
